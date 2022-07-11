@@ -1,0 +1,19 @@
+{
+  "name": "server-development-practice",
+  "version": "1.0.0",
+  "description": "https://canvas.instructure.com/courses/4898196/assignments/30604099",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watch --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArzuVon/server-development-practice.git"
+  },
+  "author": "\"Von Arzu\",",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ArzuVon/server-development-practice/issues"
+  },
+  "homepage": "https://github.com/ArzuVon/server-development-practice#readme"
+}
