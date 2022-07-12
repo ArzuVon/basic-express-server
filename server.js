@@ -24,6 +24,6 @@ function start(port){
 }
 
 module.exports = {
-    start,
     app,
+    start,
 };
