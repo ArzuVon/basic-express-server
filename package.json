@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "jest --watch --coverage"
+    "test": "jest --watch --coverage",
+    "test: watch": "jest --watch --coverage"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ArzuVon/server-development-practice.git"
   },
-  "author": "\"Von Arzu\",",
+  "author": "Von Arzu",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ArzuVon/server-development-practice/issues"
@@ -22,6 +23,7 @@
     "express": "^4.18.1"
   },
   "devDependencies": {
+    "@types/jest": "^28.1.4",
     "jest": "^28.1.2",
     "supertest": "^6.2.4"
   }
