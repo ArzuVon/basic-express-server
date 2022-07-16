@@ -6,14 +6,25 @@ Application development in the Node.js ecosystem, including the writing of modul
 
 #### Execute
 
-- Setup a Node.js Package using npm
+- Setup a Node.js test to pass routes
+![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
+
+
+
 - Create CommonJS modules
+![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
+
+
+
 - Create a simple express server
-- See passing tests via GitHub actions (CI)
-- Deploy to Heroku using CD
+![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
+
 
 ### CI/CD - Continuous Integration and Deployment
+- See passing tests via GitHub actions (CI)
 
-In your lab today, you'll be doing a full "professional" deployment using 2 branches, PR's, and a continuous process to get your code deployed.
 
-You will repeat this process for every server based lab moving forward. Keep these notes (and the lab steps) handy for future reference
+- Deploy to Heroku using CD
+
+[mainProdHeroku](https://von-server-deploy-prod.herokuapp.com/data)
+[devHeroku](https://von-server-deploy-dev.herokuapp.com/data)
