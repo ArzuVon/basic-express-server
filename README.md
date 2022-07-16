@@ -2,9 +2,6 @@
 
 Application development in the Node.js ecosystem, including the writing of modular code using CommonJS modules, writing tests to assert code quality, setting up and working in a "Continuous Integration"  environment (Github Actions).
 
-- Node and the V8 Engine
-
-#### Execute
 
 - Setup a Node.js test to pass routes
 ![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
