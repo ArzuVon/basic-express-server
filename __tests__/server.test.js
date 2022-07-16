@@ -5,45 +5,43 @@
 //expect(true).toBe(true); //SGTM
 //expect(3).toBe(5); // ?? sus
 
-//test organization - describe, it
+//test organization - using functions describe, it
 //test setup
 
 //going to have number of nested describes
- const supertest = require("supertest");
- const server = require("../server.js");
+const supertest = require('supertest');
+const server = require('../server.js');
 
- const request = supertest(server.app);
+const request = supertest(server.app);
 
 
-describe("Node Server", () => {
-    it("says hello world", async() =>{
-        //set up test so it can do a thing
-        //prepare the server
-        //(see above)
+describe('Node Server', () => { //description of what we are trying to test
+  it('says hello world', async() =>{ //a single test case
+    //set up test so it can do a thing
+    //prepare the server
+    //(see above)
 
-        //perform an action, that does the thing
-        //request th /route
-        const response = await request.get("/"); //the request is a promise
+    //perform an action, that does the thing
+    //request the /route
+    const response = await request.get('/'); //the request is a promise
 
-        //assert or expect the result of the action
-        // expect the / route to respond with hello
-        expect(response.status).toBe(200);
-        expect(response.text).toBe("Hello, World");
+    //assert or expect the result of the action
+    // expect the / route to respond with hello, the thing you want to look at
+    expect(response.status).toBe(200);
+    expect(response.text).toBe('Hello, World');
 
+  });
+
+  //test driven development when you write the test first
+  it('returns some data', async () => {
+    const response = await request.get('/data');
+
+    expect(response.status).toBe(200);
+    expect(response.body).toEqual({
+      name: 'Von',
+      role: 'Developer', //in Test Driven Developemnt write test first than minimum amount of code
     });
-
-    //test driven development when you write the test first
-    it("returns some data", async () => {
-        const request = supertest(server.app);
-
-        const response = await request.get("./data");
-
-        expect(response.status).toBe(200);
-        expect(response.body).toEqual({
-            name: "Von",
-            role: "Developer",
-        });
-    });
+  });
 });
 
 
