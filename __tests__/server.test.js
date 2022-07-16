@@ -34,8 +34,6 @@ describe('Node Server', () => { //description of what we are trying to test
 
   //test driven development when you write the test first
   it('returns some data', async () => {
-    const request = supertest(server.app);
-
     const response = await request.get('/data');
 
     expect(response.status).toBe(200);
