@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "jest --watch --coverage"
+    "test": "jest --coverage",
+    "test:watch": "jest --watch--coverage"
+
   },
   "repository": {
     "type": "git",
