@@ -12,6 +12,7 @@
   "extends": "eslint:recommended",
   "parserOptions": {
     "sourceType": "module",
+    "parser": "@babel/eslint-parser",
     "ecmaVersion": 2018
   },
   "rules": {

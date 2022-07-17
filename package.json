@@ -6,11 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "test": "jest --coverage",
-<<<<<<< Updated upstream
     "test:watch": "jest --watch --coverage"
-=======
-    "test: watch": "jest --watch --coverage"
->>>>>>> Stashed changes
   },
   "repository": {
     "type": "git",
