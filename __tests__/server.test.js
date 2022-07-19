@@ -10,7 +10,7 @@
 
 //going to have number of nested describes
 const supertest = require('supertest');
-const server = require('../server.js');
+const server = require('../src/server.js');
 
 const request = supertest(server.app);
 

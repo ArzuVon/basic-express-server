@@ -1,36 +1,17 @@
 'use strict';
 
 const express = require('express');
+const { logger } = require('./middleware/logger');
+const { hello } = require('./handler/hello');
+const { data } = require('/handler/data');
 
-const hello = (req, res) => {
-//   console.log(Date.now(), req.url);
-  res.status(200).send('Hello, World'); //this handle app.get invokes the hello as the / gets called and it sends back a 200 "okay" and then sends the hello world
-};
-//Sets server up (above)
 
-//Below/(bottom) half allows you to use the server you set up "Okay Go"
-const data = (req, res) => {
-  res.status(200).send({
-    name: 'Von',
-    role: 'Developer',
-    // where did,  get role() {
-    //   return this._role;
-    // },
-    // set role(value) {
-    //   this._role = value;
-    // },
-  });
-};
+
 const app = express();
-
-const logger = (req, res, next) => {
-  console.log(Date.now(), req.url);
-  next();
-};
 
 // app.use(something - a middleware); //something is middleware
 
-//What is a handler?
+//What is a handler? - function
 function handler(req, res, next){
   //request: is an object with a query, endpoints, URL - things the browser sends to the server when
   //response: status, body - what you get back from a server
