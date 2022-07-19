@@ -23,7 +23,7 @@ const data = (req, res) => {
 const app = express();
 
 const logger = (req, res, next) => {
-  console.log(Date.now(), req.url);
+//   console.log(Date.now(), req.url);
   next();
 };
 
@@ -37,7 +37,8 @@ function handler(req, res, next){
 
 }
 
-app.get('/', logger, hello); //handler happens at the end and gives data back. Endpoint to your port (3000)
+app.use(logger);
+app.get('/', hello); //handler happens at the end and gives data back. Endpoint to your port (3000)
 app.get('/data', data); // '/data' is a handler which is a function itself. function takes 2 at once
 // ---
 
