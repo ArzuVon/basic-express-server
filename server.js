@@ -3,6 +3,7 @@
 const express = require('express');
 
 const hello = (req, res) => {
+//   console.log(Date.now(), req.url);
   res.status(200).send('Hello, World'); //this handle app.get invokes the hello as the / gets called and it sends back a 200 "okay" and then sends the hello world
 };
 //Sets server up (above)
@@ -23,7 +24,7 @@ const data = (req, res) => {
 const app = express();
 
 const logger = (req, res, next) => {
-//   console.log(Date.now(), req.url);
+  console.log(Date.now(), req.url);
   next();
 };
 
@@ -34,7 +35,6 @@ function handler(req, res, next){
   //request: is an object with a query, endpoints, URL - things the browser sends to the server when
   //response: status, body - what you get back from a server
   //next: a function passed to the middleware , to pass control to the "next"
-
 }
 
 app.use(logger);
