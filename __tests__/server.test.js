@@ -10,7 +10,7 @@
 
 //going to have number of nested describes
 const supertest = require('supertest');
-const server = require('../src/server.js');
+const server = require('../src/server');
 
 const request = supertest(server.app);
 
@@ -41,6 +41,11 @@ describe('Node Server', () => { //description of what we are trying to test
       name: 'Von',
       role: 'Developer', //in Test Driven Developemnt write test first than minimum amount of code
     });
+  });
+
+  it('should respond 500 on an error', async () => {
+    const response = await request.get('/throw-error');
+    expect(response.status).toBe(500);
   });
 });
 
