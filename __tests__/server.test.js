@@ -45,7 +45,20 @@ describe('Node Server', () => { //description of what we are trying to test
 
   it('should respond 500 on an error', async () => {
     const response = await request.get('/throw-error');
+
     expect(response.status).toBe(500);
+  });
+
+  it('knows about pets', async () => {
+    let response = await request.get('/pets/Oliver');
+
+    expect(response.status).toBe(200);
+    expect(response.body.name).toMatch(/Oliver/);
+
+    response = await request.get('/pets/Pippin');
+
+    expect(response.status).toBe(200);
+    expect(response.body.name).toMatch(/Pippin/);
   });
 });
 
