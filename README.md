@@ -22,6 +22,17 @@ module.exports = {
 };
 ```
 
+### CRUD Operations with REST and Express
+
+- CREATE
+  - `app.post('/resource')`
+- READ
+  - `app.get('/resource')`
+- UPDATE
+  - `app.put('/resource/:id')`
+- DESTROY
+  - `app.delete('/resource/:id')`
+
 Create a simple express server
 
 - This handle app.get invokes the hello as the / gets called and it sends back a 200 "okay" and then sends the hello world
