@@ -30,7 +30,3 @@ module.exports = {
     Boxer: boxer(db),
     Coder: coder(db),
 };
-
-
-
-
