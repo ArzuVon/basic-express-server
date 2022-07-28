@@ -3,12 +3,12 @@ const { boxer } = require('./models/boxer');
 const { coder } = require('./models/coder');
 
 let connection_string;
-switch (process.env.NODE_ENV){
-case 'production':
+  switch (process.env.NODE_ENV){
+  case 'production':
   connection_string = process.env.DATABASE_URL;
   break;
-case 'dev':
-case 'staging':
+  case 'dev':
+  case 'staging':
   connection_string = 'sqlite::memory:';
   break;
   default:
