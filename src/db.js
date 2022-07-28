@@ -16,6 +16,20 @@ case 'staging':
     break;
 }
 
+const db = new Sequelize(connection_string,{
+    dialectOptions: {
+        ssl: {
+            require: true,
+            rejectionUnauthorized: false,
+        },
+    },
+});
+
+module.exports = {
+    db,
+    Boxer: boxer(db),
+    Coder: coder(db),
+};
 
 
 
