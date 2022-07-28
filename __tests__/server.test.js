@@ -98,6 +98,76 @@ describe('models', () => {
 
   });
 
+  //Creates Coder
+
+  it('creates a coder', async () => {
+    let response = await request.post('/coder').send({
+      coderType: 'Test coder',
+      hobby: 'string',
+    });
+
+    expect(response.status).toBe(200);
+    expect(response.body).toMatchObject({
+      coderType: 'Test coder',
+      hobby: 'string', //in Test Driven Developemnt write test first than minimum amount of code
+    });
+  });
+
+  //Grabs or post a Coder
+  it('retrieves a coder', async () => {
+    let createResponse = await request.post('/coder').send({
+      coderType: 'Test coder',
+      hobby: 'string',
+    });
+
+    expect(createResponse.status).toBe(200);
+    const createdId = createResponse.body.id;
+
+    let retrieveResponse = await request.get(`/coder/${createdId}`);
+
+    expect(retrieveResponse.status).toBe(200);
+    expect(retrieveResponse.body).toMatchObject({
+      coderType: 'Test coder',
+      hobby: 'string',
+    });
+  });
+
+  //it Lists Coder
+  it('can list a coder', async () =>{
+    let listBoxerRes = await request.get('/coder');
+    expect(listBoxerRes.status).toBe(200);
+    expect(listBoxerRes.body[0]).toHaveProperty('coderType');
+  });
+
+  //it deleted coder
+  it('deletes a coder', async() => {
+    let createResponse = await request.post('/coder').send({
+      coderType: 'Test coder',
+      hobby: 'string',
+    });
+
+    expect(createResponse.status).toBe(200);
+    const createdId = createResponse.body.id;
+
+    let retrieveResponse = await request.delete(`/coder/${createdId}`);
+    expect(retrieveResponse.status).toBe(200);
+
+  });
+
+  //it Updates coder
+  it.skip('can update a coder', async ()=>{
+    let createResponse = await request.post('/coder').send({
+      coderType: 'Test coder',
+      hobby: 'string',
+    });
+
+    expect(createResponse.status).toBe(200);
+    const createdId = createResponse.body.id;
+
+    const updateRes = await request.put(`/boxer/${createdId}`).send({ coderType: 'light weight'});
+    expect(updateRes.status).toBe(200);
+
+  });
 
 });
 
