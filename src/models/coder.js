@@ -7,9 +7,7 @@ function coder(db){
       allowNull: false,
       unique: true,
     },
-    fightStyle: sequelize.DataTypes.STRING,
-
-
+    hobby: sequelize.DataTypes.STRING,
   });
 
 }
