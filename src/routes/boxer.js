@@ -7,7 +7,7 @@ const createBoxer = async (res,req) =>{
     res.status(200).send(boxer);
 };
 
-const listBoxers = async (req, res) =>{
+const listBoxers = async (req, res) => {
     const boxers = await Boxer.findAll();
     res.status(200).send(boxers);
 };
@@ -38,17 +38,17 @@ const deleteBoxer = async (req, res) => {
     }
 };
 
-const updateBoxer = asynce (req, res) => {
-    await Boxer.update({boxerName: req.queryboxerName, fightStyle: req.query.fightStyle},{
+const updateBoxer = async (req, res) => {
+    await Boxer.update({boxerName: req.query.boxerName, fightStyle: req.query.fightStyle},{
         where: {
             id: req.params.id,
         },
         returning: true,
     });
-    res.status(200).send('It worked');
+    res.status(200).send('updated Boxer');
 };
 
-modile.exports = {
+module.exports = {
     createBoxer,
     listBoxers,
     getBoxer,
