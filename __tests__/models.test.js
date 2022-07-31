@@ -19,6 +19,7 @@ const request = supertest(server.app);
       boxerType: 'Test boxer',
       fightStyle: 'string',
     });
+
     expect(response.status).toBe(200);
     expect(response.body).toMatchObject({
       boxerType: 'Test boxer',
