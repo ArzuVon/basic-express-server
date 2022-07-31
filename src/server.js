@@ -7,6 +7,7 @@ require('./db');
 
 const { hello } = require('./handler/hello');
 const { data } = require('./handler/data');
+const { validator }= require('./middleware/validator');
 const {createBoxer, listBoxers, getBoxer, deleteBoxer, updateBoxer } = require('./routes/boxer');
 const { createCoder, listCoders, getCoder, deleteCoder, updateCoder } = require('./routes/coder');
 const { db } = require('./db');
