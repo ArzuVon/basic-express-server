@@ -29,7 +29,7 @@ describe('Boxer route', () => {
 
   it('can query a boxer', async () => {
     const createReq = {
-      body: { boxerName: 'test boxer', fightStyle: 'string' },
+      body: { boxerName: 'test boxer', fightStyle: 'southpaw' },
     };
     const res = {
       status: jest.fn().mockReturnThis(),
@@ -39,7 +39,6 @@ describe('Boxer route', () => {
     await createBoxer(createReq, res);
 
     const createdBoxerId = res.send.mock.calls[0][0].id;
-
     const getReq = { params: { id: createdBoxerId } };
 
     await getBoxer(getReq, res);
@@ -47,7 +46,7 @@ describe('Boxer route', () => {
     expect(res.send.mock.calls[1][0]).toMatchObject({
       id: createdBoxerId,
       boxerName: 'test boxer',
-      fightStyle: 'string',
+      fightStyle: 'southpaw',
     });
   });
 
