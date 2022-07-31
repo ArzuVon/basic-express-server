@@ -10,8 +10,9 @@
 
 //going to have number of nested describes
 const supertest = require('supertest');
+
 const { db } = require('../src/db');
-const server = require('../server.js');
+const server = require('../src/server');
 
 const request = supertest(server.app);
 
@@ -167,6 +168,12 @@ describe('models', () => {
     const updateRes = await request.put(`/boxer/${createdId}`).send({ coderType: 'light weight'});
     expect(updateRes.status).toBe(200);
 
+  });
+
+  it('should respond 500 on an error', async () => {
+    const response = await request.get('/throw-error');
+
+    expect(response.status).toBe(500);
   });
 
 });
