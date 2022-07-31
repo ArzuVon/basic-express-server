@@ -25,3 +25,33 @@ const getBoxer = async (req, res) => {
     }
 };
 
+const deleteBoxer = async (req, res) => {
+    const boxers = await Boxer.destroy({
+        where: {
+            id: req.params.id,
+        },
+    });
+    if(boxer.length > 0) {
+        res.status(200).send('Error');
+    } else{
+        res.status(200).send('Boxer Has Been Deleted');
+    }
+};
+
+const updateBoxer = asynce (req, res) => {
+    await Boxer.update({boxerName: req.queryboxerName, fightStyle: req.query.fightStyle},{
+        where: {
+            id: req.params.id,
+        },
+        returning: true,
+    });
+    res.status(200).send('It worked');
+};
+
+modile.exports = {
+    createBoxer,
+    listBoxers,
+    getBoxer,
+    deleteBoxer,
+    updateBoxer
+};
