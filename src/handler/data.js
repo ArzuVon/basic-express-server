@@ -15,3 +15,5 @@ const data = (req, res) => {
 module.exports = {
   data,
 };
+
+//same as person file just practice from class

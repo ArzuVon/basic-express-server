@@ -6,3 +6,5 @@ const person = (req,res) => {
 module.exports = {
     person,
 };
+
+//same as data file just cleaner
