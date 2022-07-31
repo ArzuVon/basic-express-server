@@ -25,6 +25,8 @@ const db = new Sequelize(connection_string,{
     },
 });
 
+
+//syncing databases
 module.exports = {
     db,
     Boxer: boxer(db),
